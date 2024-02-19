@@ -21,8 +21,8 @@ export default function App() {
 		// Generate random locations for each exam date
 		const locations = fetchedExams.map((exam) => ({
 			date: exam.date,
-			latitude: getRandomCoordinate(-90, 90), // Random latitude between -90 and 90
-			longitude: getRandomCoordinate(-180, 180), // Random longitude between -180 and 180
+			latitude: getRandomCoordinate(37.75, 37.8), // Random latitude between 37.75 and 37.8
+			longitude: getRandomCoordinate(-122.45, -122.4), // Random longitude between -122.45 and -122.4
 		}));
 		setRandomLocations(locations);
 	}, []);
@@ -77,10 +77,10 @@ export default function App() {
 			<MapView
 				style={styles.map}
 				region={{
-					latitude: 0, // Default center
-					longitude: 0, // Default center
-					latitudeDelta: 90, // Zoom level
-					longitudeDelta: 180, // Zoom level
+					latitude: 37.77, // Default center
+					longitude: -122.43, // Default center
+					latitudeDelta: 0.03, // Zoom level
+					longitudeDelta: 0.03, // Zoom level
 				}}
 			>
 				{randomLocations.map((location, index) => (
